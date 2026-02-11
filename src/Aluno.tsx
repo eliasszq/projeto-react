@@ -1,15 +1,15 @@
-type Props = {
+type AlunoProps = {
   nome: string;
   idade: number;
   curso: string;
 };
 
-function Aluno({ nome, idade, curso }: Props) {
+const Aluno = ({ nome, idade, curso }: AlunoProps) => {
   return (
-    <li>
+    <div>
       {nome} - {idade} anos - {curso}
-    </li>
+    </div>
   );
-}
+};
 
 export default Aluno;

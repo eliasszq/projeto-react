@@ -2,27 +2,30 @@ import alunos from "./alunos.json";
 import Aluno from "./Aluno";
 
 type AlunoType = {
+  id: number;
   nome: string;
   idade: number;
   curso: string;
 };
 
-function App() {
+const listaAlunos = alunos as AlunoType[];
+
+const App = () => {
   return (
     <div>
       <h1>Lista de Alunos</h1>
-      <ul>
-        {(alunos as AlunoType[]).map((aluno, index) => (
+      <div>
+        {listaAlunos.map((aluno) => (
           <Aluno
-            key={index}
+            key={aluno.id}
             nome={aluno.nome}
             idade={aluno.idade}
             curso={aluno.curso}
           />
         ))}
-      </ul>
+      </div>
     </div>
   );
-}
+};
 
 export default App;
